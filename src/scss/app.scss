@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+    background: url(../img/background-galaxy.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .navbar {
+      color: #21374B;
+      height: 50px;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 25px;
+    }
+    .container {
+      max-width: 500px;
+    }
+    .card-footer-item {
+      border-radius: 0;
+      border-style: none;
+      background: #21374B;
+      cursor: pointer;
+    }
+    .card-footer-item:hover {
+      background: rgb(69, 118, 163);
+    }
+    .logo {
+      width: 200px;
+    }
+    .content {
+      font-size: 60px;
+    }
+  }
