@@ -5,8 +5,7 @@ body {
   height: 100vh;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
-  color: #ffffff; }
+  background-size: cover; }
   body .navbar {
     color: #21374B;
     height: 50px; }
@@ -41,3 +40,5 @@ body {
     border-radius: 50%;
     width: 200px;
     margin-top: 40px; }
+  body i {
+    color: #ffffff; }
