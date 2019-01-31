@@ -26,3 +26,17 @@ body {
     width: 200px; }
   body .content {
     font-size: 60px; }
+  body #modalButton1 {
+    margin-left: 170px; }
+  body #modalButton2 {
+    margin-top: -41px;
+    margin-left: 300px; }
+  body #modalButton3 {
+    margin-top: -41px; }
+  body #modalButton4 {
+    margin-top: -41px;
+    margin-left: 440px; }
+  body .breakImg {
+    border-radius: 50%;
+    width: 200px;
+    margin-top: 40px; }

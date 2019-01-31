@@ -23,7 +23,8 @@
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-modal": "^3.8.1"
+    "react-modal": "^3.8.1",
+    "react-sound": "^1.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

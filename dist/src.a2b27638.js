@@ -26641,7 +26641,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _Modal2.default;
 module.exports = exports["default"];
-},{"./components/Modal":"node_modules/react-modal/lib/components/Modal.js"}],"src/components/Timer.js":[function(require,module,exports) {
+},{"./components/Modal":"node_modules/react-modal/lib/components/Modal.js"}],"src/img/Break.png":[function(require,module,exports) {
+module.exports = "/Break.ae6bf314.png";
+},{}],"src/components/Timer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26677,7 +26679,7 @@ _reactModal.default.setAppElement('#app');
 
 var customStyles = {
   content: {
-    height: 400,
+    height: 450,
     width: 600,
     top: '50%',
     left: '50%',
@@ -26711,6 +26713,8 @@ function (_React$Component) {
     _this.toggleAndStart = _this.toggleAndStart.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.handleCloseModal = _this.handleCloseModal.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.closeModalAndRestart = _this.closeModalAndRestart.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.closeModalAndFiveMinutesBreak = _this.closeModalAndFiveMinutesBreak.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.closeModalAndThirtyMinutesBreak = _this.closeModalAndThirtyMinutesBreak.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -26812,6 +26816,24 @@ function (_React$Component) {
       this.toggleAndStart();
     }
   }, {
+    key: "closeModalAndFiveMinutesBreak",
+    value: function closeModalAndFiveMinutesBreak() {
+      this.handleCloseModal();
+      this.setState({
+        seconds: this.state.seconds = 300
+      });
+      this.toggleAndStart();
+    }
+  }, {
+    key: "closeModalAndThirtyMinutesBreak",
+    value: function closeModalAndThirtyMinutesBreak() {
+      this.handleCloseModal();
+      this.setState({
+        seconds: this.state.seconds = 1800
+      });
+      this.toggleAndStart();
+    }
+  }, {
     key: "render",
     value: function render() {
       var buttonClassName = this.state.addClass ? 'fas fa-ban' : 'fas fa-play';
@@ -26823,12 +26845,25 @@ function (_React$Component) {
       }, _react.default.createElement("h2", {
         className: "card-header-title is-centered"
       }, "Break Time !"), _react.default.createElement("button", {
+        id: "modalButton1",
         className: "card-footer-item",
         onClick: this.closeModalAndRestart
       }, "Restart"), _react.default.createElement("button", {
+        id: "modalButton2",
         className: "card-footer-item",
         onClick: this.handleCloseModal
-      }, "Dismiss")), _react.default.createElement("div", {
+      }, "Dismiss"), _react.default.createElement("button", {
+        id: "modalButton3",
+        className: "card-footer-item",
+        onClick: this.closeModalAndFiveMinutesBreak
+      }, "Break : 5 min"), _react.default.createElement("button", {
+        id: "modalButton4",
+        className: "card-footer-item",
+        onClick: this.closeModalAndThirtyMinutesBreak
+      }, "Break : 30 min"), _react.default.createElement("img", {
+        className: "breakImg",
+        src: require("../img/Break.png")
+      })), _react.default.createElement("div", {
         className: "card"
       }, _react.default.createElement("header", {
         className: "card-header"
@@ -26866,7 +26901,7 @@ function (_React$Component) {
 
 var _default = Timer;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-modal":"node_modules/react-modal/lib/index.js"}],"src/components/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-modal":"node_modules/react-modal/lib/index.js","../img/Break.png":"src/img/Break.png"}],"src/components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26964,7 +26999,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34721" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45555" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

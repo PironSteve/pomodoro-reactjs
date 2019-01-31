@@ -5,7 +5,7 @@ Modal.setAppElement('#app')
 
 const customStyles = {
     content : {
-        height                : 400,
+        height                : 450,
         width                 : 600,
         top                   : '50%',
         left                  : '50%',
@@ -31,6 +31,8 @@ class Timer extends React.Component {
         this.toggleAndStart = this.toggleAndStart.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
         this.closeModalAndRestart = this.closeModalAndRestart.bind(this);
+        this.closeModalAndFiveMinutesBreak = this.closeModalAndFiveMinutesBreak.bind(this);
+        this.closeModalAndThirtyMinutesBreak = this.closeModalAndThirtyMinutesBreak.bind(this);
     }
     toggleAndStart() {
         this.setState({addClass: !this.state.addClass});
@@ -85,13 +87,28 @@ class Timer extends React.Component {
         this.handleCloseModal()
         this.toggleAndStart()
     }
+    closeModalAndFiveMinutesBreak() {
+        this.handleCloseModal()
+        this.setState({seconds: this.state.seconds = 300})
+        this.toggleAndStart();
+
+    }
+    closeModalAndThirtyMinutesBreak() {
+        this.handleCloseModal()
+        this.setState({seconds: this.state.seconds = 1800})
+        this.toggleAndStart();
+
+    }
     render() {
         let buttonClassName = this.state.addClass ? 'fas fa-ban' : 'fas fa-play';
         return  <div className="container">
                     <Modal isOpen={this.state.showModal} style={customStyles}>
                         <h2 className="card-header-title is-centered">Break Time !</h2>
-                        <button className="card-footer-item" onClick={this.closeModalAndRestart}>Restart</button>
-                        <button className="card-footer-item" onClick={this.handleCloseModal}>Dismiss</button>
+                        <button id="modalButton1" className="card-footer-item" onClick={this.closeModalAndRestart}>Restart</button>
+                        <button id="modalButton2" className="card-footer-item" onClick={this.handleCloseModal}>Dismiss</button>
+                        <button id="modalButton3" className="card-footer-item" onClick={this.closeModalAndFiveMinutesBreak}>Break : 5 min</button>
+                        <button id="modalButton4" className="card-footer-item" onClick={this.closeModalAndThirtyMinutesBreak}>Break : 30 min</button>
+                        <img className="breakImg" src={require("../img/Break.png")}></img>
                     </Modal>
                 <div className="card">
                     <header className="card-header">
