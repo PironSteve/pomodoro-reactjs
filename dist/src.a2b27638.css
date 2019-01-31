@@ -5,7 +5,8 @@ body {
   height: 100vh;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  color: #ffffff; }
   body .navbar {
     color: #21374B;
     height: 50px; }
