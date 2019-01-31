@@ -26702,7 +26702,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Timer).call(this, props));
     _this.state = {
-      seconds: 10,
+      seconds: 1200,
       addClass: false,
       timer: null,
       disabledButton: false,
