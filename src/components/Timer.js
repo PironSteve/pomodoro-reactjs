@@ -59,7 +59,6 @@ class Timer extends React.Component {
         let hour = Math.floor(seconds / 3600);
         let minutes = Math.floor((seconds % 3600) / 60);
         let sec = Math.floor((seconds % 3600) % 60);    
-        // return hour +':'+minutes+':'+sec;
 
         if (sec < 10) {
             sec = `0${sec}`;
@@ -78,7 +77,9 @@ class Timer extends React.Component {
         this.setState({seconds: this.state.seconds + 60});
     }
     decreaseMinutes() {
-        this.setState({seconds: this.state.seconds - 60});
+        if (this.state.seconds > 0) {
+            this.setState({seconds: this.state.seconds - 60});   
+        }
     }
     handleCloseModal() {
         this.setState({ showModal: false });

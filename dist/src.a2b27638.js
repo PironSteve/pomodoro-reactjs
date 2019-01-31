@@ -26772,7 +26772,7 @@ function (_React$Component) {
     value: function formatSecondsInHourAndMinutes(seconds) {
       var hour = Math.floor(seconds / 3600);
       var minutes = Math.floor(seconds % 3600 / 60);
-      var sec = Math.floor(seconds % 3600 % 60); // return hour +':'+minutes+':'+sec;
+      var sec = Math.floor(seconds % 3600 % 60);
 
       if (sec < 10) {
         sec = "0".concat(sec);
@@ -26798,9 +26798,11 @@ function (_React$Component) {
   }, {
     key: "decreaseMinutes",
     value: function decreaseMinutes() {
-      this.setState({
-        seconds: this.state.seconds - 60
-      });
+      if (this.state.seconds > 0) {
+        this.setState({
+          seconds: this.state.seconds - 60
+        });
+      }
     }
   }, {
     key: "handleCloseModal",
